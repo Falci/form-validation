@@ -2,6 +2,15 @@
 
   'use strict';
 
+
+  const removeErrors = () => {
+
+  }
+
+  const showSuccess = () => {
+
+  }
+
   const createError =(filed, message) = {
     const error = document.createElement('span');
   }
@@ -9,7 +18,7 @@
   /**
    * Add a message to existing error span
    */
-  const placeError = (filed, message) => {
+  const showErrors = (filed, message) => {
     const error = field.nextElementSibling;
     if(!error.tagName == 'SPAN'){
       return createError(field, message);
@@ -19,13 +28,20 @@
   }
 
   /**
-   * Validates if field has a value;
+   * Returns true only if field has a value;
    */
   const notBlank = (field) => {
-    const onChange = event => {
-      return !!event.target.value;
-    }
+    return !!field.value;
   }
+  notBlank.errorMessage = 'Required';
+
+  /**
+   * Returns true only if field is checked;
+   */
+  const checked = field => {
+    return field.checked;
+  }
+  checked.errorMessage = 'Required';
 
   /**
    * Validate all forms fields
@@ -38,6 +54,19 @@
       'email': [notBlank],
       'password': [notBlank],
       'terms': [checked]
+    };
+
+    for(let id in form){
+      const field = document.querySelector(`#${id}`);
+      const errors = form[id].filter(validator => validator(field))
+        .map(validator => validator.errorMessage);
+
+      if(errors.lenght){
+        showErrors(field, errors);
+      } else {
+        removeErrors(field);
+        showSuccess(field);
+      }
     }
   }
 
