@@ -94,8 +94,6 @@
    * Validate all forms fields
    */
   const validateForm = e => {
-    e.preventDefault();
-
     const form = {
       'firstName': [notBlank],
       'lastName': [notBlank],
@@ -112,6 +110,7 @@
 
       if(errors.length){
         showErrors(field, errors);
+        e.preventDefault();
       } else {
         removeErrors(field);
         showSuccess(field);
