@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Validation VanillaJS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Form Validation - Vanilla JS</h1>
+
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <form action="../success.html">
+            <div class="form-group has-feedback">
+              <label class="control-label" for="firstName">First Name</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input type="text" class="form-control" id="firstName" autofocus="" required>
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback hide"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <label class="control-label" for="lastName">Last Name</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input type="text" class="form-control" id="lastName" required>
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback hide"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <label class="control-label" for="username">Username</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input type="text" class="form-control" id="username" required>
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback hide"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <label class="control-label" for="email">Email</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-envelope"></i>
+                </span>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback hide"></span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="password">Password</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" class="form-control" id="password" required>
+              </div>
+              <span class="glyphicon glyphicon-ok form-control-feedback hide"></span>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="termsCheck" required> I accept <a href="../terms.html" id="terms">the terms</a>.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://github.com/falci/form-validation"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+  </body>
+</html>
